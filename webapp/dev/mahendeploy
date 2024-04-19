@@ -5,15 +5,15 @@ metadata:
   namespace: myapp
   selector:
     matchLabels:
-      app: myapp
+      app: alpine
   replicas: 4
   template:
     metadata:
       labels:
-        app: myapp
+        app: alpine
     spec:
       containers:
-      - name: myapp
+      - name: alpine
         image: alpine
         command: ["sleep", "3600"]
         ports:
