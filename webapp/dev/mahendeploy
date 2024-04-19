@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mahendeploy
+  namespace: myapp
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: alpine
+        command: ["sleep", "3600"]
+        ports:
+        - containerPort: 8080
+         
